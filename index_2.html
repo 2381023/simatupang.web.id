@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Splice-Inspired Design</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom background image classes */
+    .hero-background {
+      background-image: url('asset/hero-img.png');
+      background-size: cover;
+      background-position: center;
+    }
+    .cta-background {
+      background-image: url('asset/footer-img.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
+</head>
+
+<body class="bg-[#0d0d0d] text-white font-sans">
+
+  <header class="bg-black sticky top-0 z-50">
+    <div class="container flex justify-between items-center py-4 px-6">
+      <div class="logo">
+        <img src="asset/splice_logo.png" alt="Logo" class="h-10">
+      </div>
+
+      <!-- Left Navigation (Menambahkan margin kiri) -->
+      <nav class="nav-left flex gap-5 ml-8 hidden lg:flex">
+        <ul class="flex space-x-5">
+          <li><a href="#" class="text-[#cccccc] text-sm hover:text-white">Home</a></li>
+          <li><a href="biodata.html" class="text-[#cccccc] text-sm hover:text-white">Biodata</a></li>
+          <li><a href="contact_us.html" class="text-[#cccccc] text-sm hover:text-white">Contact Us</a></li>
+          <li><a href="free_page.html" class="text-[#cccccc] text-sm hover:text-white">Free Page</a></li>
+        </ul>
+      </nav>
+
+      <!-- Right Navigation -->
+      <nav class="nav-right ml-auto flex gap-5">
+        <ul class="flex space-x-5">
+          <li class="login"><a href="#" class="text-[#cccccc] text-sm">Login</a></li>
+          <li class="try-now"><a href="#" class="bg-white text-[#101010] px-6 py-2 rounded-full text-sm hover:bg-[#dddddd]">Try Now</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative h-screen flex items-center justify-center">
+    <div class="w-3/5 h-3/5 m-auto hero hero-background">
+      <div class="text-center px-10 py-16 absolute -bottom-36 w-[800px]  flex flex-col justify-center items-center">
+        <p class="text-[#ffeb00] text-4xl font-bold mb-6">Browse millions of royalty-free one-shots, loops, FX, MIDI, and presets</p>
+        <p class="text-xl mb-4">In a sample library deep enough to get lost in. It all starts on Splice.</p>
+        <a href="#" class="bg-[#ffeb00] text-black py-3 px-8 rounded-lg text-xl font-semibold uppercase hover:bg-[#e5d200]">Try Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sounds Section -->
+  <section class="sounds bg-[#0d0d0d] py-16 mt-32">
+    <div class="container mx-auto flex flex-col lg:flex-row justify-between items-center gap-10 px-6">
+
+      <div class="section-text text-white max-w-[600px]">
+        <p class="text-xs font-semibold tracking-wide uppercase mb-2">Sounds</p>
+        <p class="text-3xl font-bold mb-4">A catalog so deep, it’s dangerous.</p>
+        <p class="text-lg mb-8">Expertly created and curated samples in any style imaginable. Start swimming in sound.</p>
+        <a href="#" class="bg-[#007bff] text-white py-3 px-8 rounded-lg text-sm font-semibold hover:bg-[#0056b3]">Explore Sounds</a>
+      </div>
+
+      <div class="section-img flex-1">
+        <img src="asset/sounds.png" alt="Sounds" class="max-w-[400px] w-full h-auto rounded-xl">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Technology Section -->
+  <section class="technology bg-[#0d0d0d] py-16">
+    <div class="container mx-auto flex flex-col lg:flex-row justify-between items-center gap-10 px-6">
+      <div class="section-text text-white max-w-[600px]">
+        <p class="text-xs font-semibold tracking-wide uppercase mb-2">Technology</p>
+        <p class="text-3xl font-bold mb-4">Create more with Create mode.</p>
+        <p class="text-lg mb-8">Create mode does the hard work of matching compatible loops, so you can easily explore our catalog while you sketch out musical ideas.</p>
+        <a href="#" class="bg-[#007bff] text-white py-3 px-8 rounded-lg text-sm font-semibold hover:bg-[#0056b3]">Start Here</a>
+      </div>
+      <div class="section-img flex-1">
+        <img src="asset/technology.jpg" alt="Technology" class="max-w-[400px] w-full h-auto rounded-xl">
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials-section bg-[#0d0d0d] py-16 text-center">
+    <h2 class="text-white text-3xl font-bold mb-8">What creators are saying about Splice</h2>
+    <div class="testimonials flex justify-center gap-8 flex-wrap">
+      <div class="testimonial-card bg-[#1d1d1d] p-8 rounded-xl w-[300px] shadow-lg text-center">
+        <img src="asset/andrew-huang.jpg" alt="Andrew Huang" class="rounded-full mb-6 mx-auto w-[150px] h-[150px] object-cover">
+        <p class="text-lg mb-4">I can always find what I’m looking for on Splice, whether it’s the exact sound I want or just a bit of inspiration.</p>
+        <p class="font-semibold text-gray-400">Andrew Huang</p>
+      </div>
+      <div class="testimonial-card bg-[#1d1d1d] p-8 rounded-xl w-[300px] shadow-lg text-center">
+        <img src="asset/kshmr.jpg" alt="KSHMR" class="rounded-full mb-6 mx-auto w-[150px] h-[150px] object-cover">
+        <p class="text-lg mb-4">Finally a way to buy plugins that works. By paying a little at a time, producers can get legit access to the top VSTs.</p>
+        <p class="font-semibold text-gray-400">KSHMR</p>
+      </div>
+      <div class="testimonial-card bg-[#1d1d1d] p-8 rounded-xl w-[300px] shadow-lg text-center">
+        <img src="asset/kesha-lee.jpg" alt="Kesha Lee" class="rounded-full mb-6 mx-auto w-[150px] h-[150px] object-cover">
+        <p class="text-lg mb-4">It’s been fun to dive into Splice’s creator community and explore tools that support my own creative process.</p>
+        <p class="font-semibold text-gray-400">Kesha Lee</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta cta-background h-[400px] flex justify-center items-center text-center text-white">
+    <div class="cta-content">
+      <p class="text-4xl font-bold mb-6">Try Splice Today</p>
+      <a href="#" class="bg-[#007bff] text-white py-3 px-8 rounded-lg text-xl font-semibold hover:bg-[#0056b3]">Try Now</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#0d0d0d] py-8 text-center">
+    <div class="footer grid grid-cols-1 sm:grid-cols-3 gap-6 mb-4">
+      <div><a href="https://fti.unai.edu" class="text-white text-sm hover:text-[#ffeb00]">FTI UNAI</a></div>
+      <div><a href="https://unai.edu" class="text-white text-sm hover:text-[#ffeb00]">UNAI Website</a></div>
+      <div><a href="https://ejournal.teknologi.fti.unai.edu/index.php/teika" class="text-white text-sm hover:text-[#ffeb00]">Jurnal Teika</a></div>
+    </div>
+    <div class="copyright text-sm text-[#9e9e9e]">© 2024 Splice.com All Rights Reserved</div>
+  </footer>
+
+</body>
+
+</html>

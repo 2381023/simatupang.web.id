@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // JavaScript for form validation
+    function validateForm(event) {
+      event.preventDefault(); // Prevent form submission
+
+      const fullName = document.getElementById('full-name');
+      const studentId = document.getElementById('student-id');
+      const email = document.getElementById('email');
+      const faculty = document.getElementById('faculty');
+      const birthdate = document.getElementById('birthdate');
+      const gender = document.querySelector('input[name="gender"]:checked');
+      const address = document.getElementById('address');
+      const phone = document.getElementById('phone');
+
+      // Reset all previous error styles
+      document.querySelectorAll('.error').forEach(function (el) {
+        el.classList.remove('error');
+      });
+
+      let valid = true;
+
+      // Validate Full Name
+      if (fullName.value.trim() === "") {
+        fullName.classList.add('error');
+        valid = false;
+      }
+
+      // Validate Student ID
+      if (studentId.value.trim() === "") {
+        studentId.classList.add('error');
+        valid = false;
+      }
+
+      // Validate Email
+      const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+      if (!emailPattern.test(email.value.trim())) {
+        email.classList.add('error');
+        valid = false;
+      }
+
+      // Validate Faculty/Major
+      if (faculty.value === "") {
+        faculty.classList.add('error');
+        valid = false;
+      }
+
+      // Validate Birthdate
+      if (birthdate.value === "") {
+        birthdate.classList.add('error');
+        valid = false;
+      }
+
+      // Validate Gender
+      if (!gender) {
+        document.querySelector('.gender-error').classList.add('error');
+        valid = false;
+      }
+
+      // Validate Address
+      if (address.value.trim() === "") {
+        address.classList.add('error');
+        valid = false;
+      }
+
+      // Validate Phone Number (numeric and minimum length of 10)
+      const phonePattern = /^\d{10,}$/;
+      if (!phonePattern.test(phone.value.trim())) {
+        phone.classList.add('error');
+        valid = false;
+      }
+
+      // If the form is valid, clear it
+      if (valid) {
+        alert("Registration Successful!");
+        document.getElementById("registration-form").reset(); // Clear form
+      } else {
+        alert("Please fill out all fields correctly.");
+      }
+    }
+
+    // Function to highlight the input field on focus
+    function highlightInput(event) {
+      event.target.classList.add('focus:ring-2', 'focus:ring-[#ffeb00]');
+    }
+
+    // Function to remove highlight when the input loses focus
+    function removeHighlight(event) {
+      event.target.classList.remove('focus:ring-2', 'focus:ring-[#ffeb00]');
+    }
+  </script>
+</head>
+
+<body class="bg-[#0d0d0d] text-white font-sans">
+
+  <!-- Header -->
+  <header class="bg-black sticky top-0 z-50">
+    <div class="container flex justify-between items-center py-4 px-6">
+      <div class="logo">
+        <img src="asset/splice_logo.png" alt="Logo" class="h-10">
+      </div>
+
+      <!-- Left Navigation (Menambahkan margin kiri) -->
+      <nav class="nav-left flex gap-5 ml-8 hidden lg:flex">
+        <ul class="flex space-x-5">
+          <li><a href="index.html" class="text-[#cccccc] text-sm hover:text-white">Home</a></li>
+          <li><a href="biodata.html" class="text-[#cccccc] text-sm hover:text-white">Biodata</a></li>
+          <li><a href="contact_us.html" class="text-[#cccccc] text-sm hover:text-white">Contact Us</a></li>
+          <li><a href="posts.html" class="text-[#cccccc] text-sm hover:text-white">Posts</a></li>
+          <li><a href="free_page.html" class="text-[#cccccc] text-sm hover:text-white">Free Page</a></li>
+        </ul>
+      </nav>
+
+      <!-- Right Navigation -->
+      <nav class="nav-right ml-auto flex gap-5">
+        <ul class="flex space-x-5">
+          <li class="login"><a href="#" class="text-[#cccccc] text-sm">Login</a></li>
+          <li class="try-now"><a href="#" class="bg-white text-[#101010] px-6 py-2 rounded-full text-sm hover:bg-[#dddddd]">Try Now</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <section class="registration py-16 px-6">
+      <div class="container mx-auto max-w-4xl">
+        <h1 class="text-3xl font-bold text-center text-white mb-8">Registration Form</h1>
+        <form id="registration-form" action="#" method="POST" class="space-y-6" onsubmit="validateForm(event)">
+          
+          <!-- Full Name -->
+          <div>
+            <label for="full-name" class="block text-lg text-[#cccccc] mb-2">Full Name:</label>
+            <input type="text" id="full-name" name="full-name" required
+              class="w-full p-3 bg-[#1d1d1d] text-white border border-[#333333] rounded-lg focus:outline-none"
+              onfocus="highlightInput(event)" onblur="removeHighlight(event)">
+          </div>
+
+          <!-- Student ID (NIM) -->
+          <div>
+            <label for="student-id" class="block text-lg text-[#cccccc] mb-2">Student ID (NIM):</label>
+            <input type="text" id="student-id" name="student-id" required
+              class="w-full p-3 bg-[#1d1d1d] text-white border border-[#333333] rounded-lg focus:outline-none"
+              onfocus="highlightInput(event)" onblur="removeHighlight(event)">
+          </div>
+          
+          <!-- Email -->
+          <div>
+            <label for="email" class="block text-lg text-[#cccccc] mb-2">Email Address:</label>
+            <input type="email" id="email" name="email" required
+              class="w-full p-3 bg-[#1d1d1d] text-white border border-[#333333] rounded-lg focus:outline-none"
+              onfocus="highlightInput(event)" onblur="removeHighlight(event)">
+          </div>
+
+          <!-- Faculty/Major -->
+          <div>
+            <label for="faculty" class="block text-lg text-[#cccccc] mb-2">Faculty/Major:</label>
+            <select id="faculty" name="faculty" required
+              class="w-full p-3 bg-[#1d1d1d] text-white border border-[#333333] rounded-lg focus:outline-none"
+              onfocus="highlightInput(event)" onblur="removeHighlight(event)">
+              <option value="">Select Faculty/Major</option>
+              <option value="Faculty of Information Technology">Faculty of Information Technology</option>
+              <option value="Faculty of Business">Faculty of Business</option>
+              <option value="Faculty of Engineering">Faculty of Engineering</option>
+            </select>
+          </div>
+
+          <!-- Date of Birth -->
+          <div>
+            <label for="birthdate" class="block text-lg text-[#cccccc] mb-2">Date of Birth:</label>
+            <input type="date" id="birthdate" name="birthdate" required
+              class="w-full p-3 bg-[#1d1d1d] text-white border border-[#333333] rounded-lg focus:outline-none"
+              onfocus="highlightInput(event)" onblur="removeHighlight(event)">
+          </div>
+
+          <!-- Gender -->
+          <div>
+            <label class="block text-lg text-[#cccccc] mb-2">Gender:</label>
+            <div class="flex gap-6 items-center">
+              <div>
+                <input type="radio" id="male" name="gender" value="male" class="mr-2">
+                <label for="male">Male</label>
+              </div>
+              <div>
+                <input type="radio" id="female" name="gender" value="female" class="mr-2">
+                <label for="female">Female</label>
+              </div>
+            </div>
+            <div class="gender-error text-sm text-[#ffeb00]">Please select a gender</div>
+          </div>
+
+          <!-- Address -->
+          <div>
+            <label for="address" class="block text-lg text-[#cccccc] mb-2">Address:</label>
+            <textarea id="address" name="address" rows="4" required
+              class="w-full p-3 bg-[#1d1d1d] text-white border border-[#333333] rounded-lg focus:outline-none"
+              onfocus="highlightInput(event)" onblur="removeHighlight(event)"></textarea>
+          </div>
+
+          <!-- Phone Number -->
+          <div>
+            <label for="phone" class="block text-lg text-[#cccccc] mb-2">Phone Number:</label>
+            <input type="text" id="phone" name="phone" required
+              class="w-full p-3 bg-[#1d1d1d] text-white border border-[#333333] rounded-lg focus:outline-none"
+              onfocus="highlightInput(event)" onblur="removeHighlight(event)">
+          </div>
+
+          <!-- Submit Button -->
+          <div>
+            <input type="submit" value="Submit" class="w-full py-3 bg-[#ffeb00] text-black font-semibold rounded-lg hover:bg-[#e5d200] focus:outline-none focus:ring-2 focus:ring-[#e5d200]">
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#0d0d0d] py-8 text-center">
+    <div class="footer grid grid-cols-1 sm:grid-cols-3 gap-6 mb-4">
+      <div><a href="https://fti.unai.edu" class="text-white text-sm hover:text-[#ffeb00]">FTI UNAI</a></div>
+      <div><a href="https://ejournal.teknologi.fti.unai.edu/index.php/teika" class="text-white text-sm hover:text-[#ffeb00]">UNAI Website</a></div>
+    </div>
+    <div class="copyright text-sm text-[#9e9e9e]">© 2024 Splice.com All Rights Reserved</div>
+  </footer>
+
+
+</body>
+
+</html>

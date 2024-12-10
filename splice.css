@@ -1,0 +1,562 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #101010;
+  color: #ffffff;
+  line-height: 2;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* CSS untuk header */
+header {
+  background-color: #101010;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+}
+
+header .nav-left {
+  display: flex;
+  margin-left: 20px;
+}
+
+header .nav-left ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+header .nav-left ul li a {
+  color: #cccccc;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+header .nav-left ul li a:hover {
+  color: #ffffff;
+}
+
+header .nav-right {
+  display: flex;
+  margin-left: auto;
+}
+
+header .nav-right ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+header .nav-right ul li.login a {
+  color: #cccccc;
+  text-decoration: none;
+}
+
+header .nav-right ul li.try-now a {
+  background-color: #ffffff;
+  color: #101010;
+  padding: 5px 10px;
+  border-radius: 20px;
+  text-decoration: none;
+}
+
+header .nav-right ul li.try-now a:hover {
+  background-color: #dddddd;
+}
+
+
+hero {
+  justify-item: center;
+}
+
+.hero-background {
+  background-image: url("asset/hero-img.png");
+  background-size: 700px;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #ffeb00;
+}
+
+.hero-description p {
+  font-size: 30px;
+  margin-bottom: 20px;
+  max-width: 600px;
+  justify-items: center;
+  margin: 30px;
+}
+
+.hero-button {
+  background-color: #ffeb00;
+  color: #000000;
+  padding: 5px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  margin: 50px;
+}
+
+.hero-button:hover {
+  background-color: #e5d200;
+}
+
+/* Section Styling */
+.sounds,
+.technology,
+.connected,
+.mobile,
+.gear {
+  background-color: #0d0d0d;
+  padding: 60px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+/* Styling untuk Bagian Teks */
+.section-text {
+  color: #ffffff;
+  max-width: 600px;
+  margin-right: 40px;
+  flex: 1;
+}
+
+.text-title {
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.text-subtitle {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.text-description {
+  font-size: 18px;
+  margin: 20px 0;
+}
+
+/* Link Button */
+.link a {
+  background-color: #007bff;
+  color: #ffffff;
+  padding: 12px 24px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.link a:hover {
+  background-color: #0056b3;
+}
+
+/* Styling untuk Gambar */
+.section-img {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.section-img img {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sounds,
+  .technology,
+  .connected,
+  .mobile,
+  .gear {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .section-text {
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .section-img img {
+    max-width: 100%; /* Gambar menyesuaikan lebar layar */
+  }
+}
+
+
+.testimonials-section {
+  background-color: #0d0d0d;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.testimonials-section h2 {
+  color: #ffffff;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.testimonials {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* Menyesuaikan jarak antar testimonial */
+  flex-wrap: wrap;
+}
+
+.testimonial-card {
+  background-color: #1d1d1d;
+  border-radius: 20px;
+  padding: 30px;
+  width: 320px; /* Sedikit lebih lebar untuk konsistensi */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  display: flex;
+  flex-direction: column; /* Memastikan elemen diatur vertikal */
+  align-items: center;
+}
+
+.testimonial-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; 
+  margin-bottom: 20px; /* Sedikit lebih banyak ruang bawah */
+  border: 6px solid #0d0d0d; 
+  object-fit: cover;
+}
+
+.testimonial-text {
+  color: #ffffff;
+  font-size: 18px;
+  margin: 10px 0; /* Jarak vertikal antara teks dan nama */
+  line-height: 1.6;
+  max-width: 280px; /* Agar teks tidak terlalu lebar */
+  text-align: center; /* Memastikan teks tetap di tengah */
+}
+
+.testimonial-author {
+  color: #9e9e9e; 
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 10px; /* Tambahkan sedikit jarak di atas */
+  text-align: center;
+}
+
+
+
+.cta {
+  background-image: url("asset/footer-img.jpg"); /* Gambar latar belakang */
+  background-size: cover;
+  background-position: center;
+  height: 400px; /* Sesuaikan tinggi sesuai gambar */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  padding: 20px;
+}
+
+.cta-content p {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.cta-content a {
+  background-color: #007bff;
+  color: #ffffff;
+  padding: 15px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 20px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.cta-content a:hover {
+  background-color: #0056b3;
+}
+
+footer {
+  background-color: #0d0d0d;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 20px; /* Tambahan margin untuk jarak dengan copyright */
+}
+
+.footer div {
+  color: #ffffff;
+}
+
+.footer a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #ffeb00;
+}
+
+.copyright {
+  color: #9e9e9e;
+  font-size: 14px;
+}
+
+
+/* Biodata Section */
+.biodata {
+  margin: 50px 0;
+}
+
+/* Mengatur Tata Letak untuk Foto dan Konten */
+.biodata-container {
+  display: flex;
+  align-items: flex-start; /* Foto dan About Me sejajar vertikal */
+  gap: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Styling Foto Profil */
+.profile-photo {
+  width: 250px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px; /* Ujung foto sedikit melengkung */
+}
+
+/* Konten About Me di sebelah kanan foto */
+.right {
+  flex: 1;
+  max-width: 500px;
+}
+
+/* Mengatur Tata Letak Interest dan Hobbies */
+.bottom-content {
+  display: flex;
+  justify-content: space-between; /* Interests dan Hobbies sejajar */
+  margin-top: 20px;
+  gap: 30px;
+}
+
+/* Konten Interest */
+.interests {
+  flex: 1;
+}
+
+/* Konten Hobbies */
+.hobbies {
+  flex: 1;
+}
+
+/* Menata List */
+ul, ol {
+  list-style-position: inside;
+  padding: 0;
+  margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+  .biodata-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .right {
+      text-align: center;
+      max-width: 100%;
+  }
+
+  .profile-photo {
+      width: 100%;
+      height: auto; 
+  }
+
+  .bottom-content {
+      flex-direction: column;
+      gap: 20px;
+  }
+}
+
+.contact-us {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #333; /* Warna latar belakang gelap */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.contact-us h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: white; /* Warna teks putih */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-weight: bold;
+  color: white; /* Warna teks label putih */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+textarea,
+select {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #444; /* Warna input lebih gelap */
+  color: white; /* Warna teks input putih */
+}
+
+input::placeholder {
+  color: #bbb; /* Warna placeholder lebih terang */
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.gender-group,
+.hobbies-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white; /* Warna teks gender dan hobi putih */
+}
+
+@media (max-width: 768px) {
+  .contact-us {
+      width: 90%;
+  }
+}
+
+.dj-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.dj-item {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+  padding: 15px;
+}
+
+.dj-photo {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* Menjaga rasio tanpa distorsi */
+  object-position: top; /* Memastikan bagian atas gambar selalu terlihat */
+  border-radius: 10px;
+}
+
+.dj-item h2 {
+  margin-top: 10px;
+  font-size: 1.5em;
+}
+
+.dj-item p {
+  margin-top: 10px;
+  font-size: 1em;
+  color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dj-item {
+      width: 90%;
+  }
+}
